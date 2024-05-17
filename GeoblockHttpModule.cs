@@ -191,7 +191,6 @@ namespace IISGeoIP2blockModule
                     case "Unauthorized":
                         context.Response.StatusCode = 401;
                         context.Response.SubStatusCode = 503;
-                        context.Response.StatusDescription = string.Concat("IP is blocked by GeoIP2block Module. ", ipNotificationString, ". ", resultMessage);
                         context.Response.SuppressContent = true;
                         //do not call Response.End as this will result in a ThreadAbortException, call ApplicationInstance.CompleteRequest() instead
                         //context.Response.End();
@@ -200,7 +199,6 @@ namespace IISGeoIP2blockModule
                     case "Forbidden":
                         context.Response.StatusCode = 403;
                         context.Response.SubStatusCode = 503;
-                        context.Response.StatusDescription = string.Concat("IP is blocked by GeoIP2block Module. ", ipNotificationString, ". ", resultMessage);
                         context.Response.SuppressContent = true;
                         //do not call Response.End as this will result in a ThreadAbortException, call ApplicationInstance.CompleteRequest() instead
                         //context.Response.End();
@@ -209,7 +207,6 @@ namespace IISGeoIP2blockModule
                     case "NotFound":
                         context.Response.StatusCode = 404;
                         context.Response.SubStatusCode = 503;
-                        context.Response.StatusDescription = string.Concat("IP is blocked by GeoIP2block Module. ", ipNotificationString, ". ", resultMessage);
                         context.Response.SuppressContent = true;
                         //do not call Response.End as this will result in a ThreadAbortException, call ApplicationInstance.CompleteRequest() instead
                         //context.Response.End();
@@ -218,7 +215,6 @@ namespace IISGeoIP2blockModule
                     case "Gone":
                         context.Response.StatusCode = 410;
                         context.Response.SubStatusCode = 503;
-                        context.Response.StatusDescription = string.Concat("IP is blocked by GeoIP2block Module. ", ipNotificationString, ". ", resultMessage);
                         context.Response.SuppressContent = true;
                         //do not call Response.End as this will result in a ThreadAbortException, call ApplicationInstance.CompleteRequest() instead
                         //context.Response.End();
@@ -231,7 +227,6 @@ namespace IISGeoIP2blockModule
                     default:
                         context.Response.StatusCode = 401;
                         context.Response.SubStatusCode = 503;
-                        context.Response.StatusDescription = string.Concat("IP is blocked by GeoIP2block Module. ", ipNotificationString, ". ", resultMessage);
                         context.Response.SuppressContent = true;
                         //do not call Response.End as this will result in a ThreadAbortException, call ApplicationInstance.CompleteRequest() instead
                         //context.Response.End();
